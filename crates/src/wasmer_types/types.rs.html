@@ -867,9 +867,9 @@
 <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;enable-serde&quot;</span>, <span class="ident">derive</span>(<span class="ident">Serialize</span>, <span class="ident">Deserialize</span>))]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">FunctionType</span> {
     <span class="doccomment">/// The parameters of the function</span>
-    <span class="ident">params</span>: <span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">Type</span><span class="op">&gt;</span>,
+    <span class="ident">params</span>: <span class="ident">Box</span><span class="op">&lt;</span>[<span class="ident">Type</span>]<span class="op">&gt;</span>,
     <span class="doccomment">/// The return values of the function</span>
-    <span class="ident">results</span>: <span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">Type</span><span class="op">&gt;</span>,
+    <span class="ident">results</span>: <span class="ident">Box</span><span class="op">&lt;</span>[<span class="ident">Type</span>]<span class="op">&gt;</span>,
 }
 
 <span class="kw">impl</span> <span class="ident">FunctionType</span> {
@@ -880,8 +880,8 @@
         <span class="ident">Returns</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">Type</span><span class="op">&gt;</span><span class="op">&gt;</span>,
     {
         <span class="self">Self</span> {
-            <span class="ident">params</span>: <span class="ident">params</span>.<span class="ident">into</span>(),
-            <span class="ident">results</span>: <span class="ident">returns</span>.<span class="ident">into</span>(),
+            <span class="ident">params</span>: <span class="ident">params</span>.<span class="ident">into</span>().<span class="ident">into_boxed_slice</span>(),
+            <span class="ident">results</span>: <span class="ident">returns</span>.<span class="ident">into</span>().<span class="ident">into_boxed_slice</span>(),
         }
     }
 
