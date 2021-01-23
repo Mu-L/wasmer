@@ -391,6 +391,8 @@
 <span id="390">390</span>
 <span id="391">391</span>
 <span id="392">392</span>
+<span id="393">393</span>
+<span id="394">394</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">config</span>::<span class="ident">LLVM</span>;
 <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">trampoline</span>::<span class="ident">FuncTrampoline</span>;
@@ -478,6 +480,8 @@
     ) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">u8</span><span class="op">&gt;</span>, <span class="ident">CompileError</span><span class="op">&gt;</span> {
         <span class="kw">let</span> <span class="ident">target_machine</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">config</span>().<span class="ident">target_machine</span>(<span class="ident">target</span>);
         <span class="kw">let</span> <span class="ident">ctx</span> <span class="op">=</span> <span class="ident">Context</span>::<span class="ident">create</span>();
+
+        <span class="comment">// TODO: https:/github.com/rayon-rs/rayon/issues/822</span>
 
         <span class="kw">let</span> <span class="ident">merged_bitcode</span> <span class="op">=</span> <span class="ident">function_body_inputs</span>
             .<span class="ident">into_iter</span>()
