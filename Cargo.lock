@@ -108,7 +108,7 @@ dependencies = [
  "cfg-if 1.0.0",
  "libc",
  "miniz_oxide",
- "object",
+ "object 0.24.0",
  "rustc-demangle",
 ]
 
@@ -1278,9 +1278,16 @@ name = "object"
 version = "0.24.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1a5b3dd1c072ee7963717671d1ca129f1048fda25edea6b752bfc71ac8854170"
+
+[[package]]
+name = "object"
+version = "0.25.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9023c1c0973b327f073c7f2fceb9bcc049862f93a7d14c6feb46c8a56460a0d5"
 dependencies = [
  "crc32fast",
  "indexmap",
+ "memchr",
 ]
 
 [[package]]
@@ -2519,7 +2526,7 @@ dependencies = [
  "lazy_static",
  "libc",
  "loupe",
- "object",
+ "object 0.25.1",
  "rayon",
  "regex",
  "rustc_version 0.2.3",
@@ -2686,7 +2693,7 @@ dependencies = [
 name = "wasmer-object"
 version = "2.0.0-rc2"
 dependencies = [
- "object",
+ "object 0.25.1",
  "thiserror",
  "wasmer-compiler",
  "wasmer-types",
