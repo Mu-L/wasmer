@@ -813,6 +813,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "flagset"
+version = "0.4.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1207393e01e20804589a3fc9781c9df2a70687cd81362ca58e33b2a726ec83cf"
+
+[[package]]
 name = "flate2"
 version = "1.0.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2629,20 +2635,21 @@ dependencies = [
 
 [[package]]
 name = "wasm-encoder"
-version = "0.4.1"
+version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "51b4949d4f2b25a4b208317dcf86aacef9e7a5884e48dfc45d4aeb91808d6f86"
+checksum = "5d91b9e85e0499d85b1135165b277ee9c4d918b80b487fb5355525c9253ba3f8"
 dependencies = [
  "leb128",
 ]
 
 [[package]]
 name = "wasm-smith"
-version = "0.4.5"
+version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f7e95fdeed16adeffed44efdc7ccf27d4f57ff2e99de417c75bcee7dee09049b"
+checksum = "7c472f8695b0e562fbf6b1f417133a789a767db882453e80ad266f9be971ea69"
 dependencies = [
  "arbitrary",
+ "flagset",
  "indexmap",
  "leb128",
  "wasm-encoder",
